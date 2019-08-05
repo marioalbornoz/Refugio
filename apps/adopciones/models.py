@@ -1,3 +1,19 @@
 from django.db import models
 
 # Create your models here.
+class Persona(models.Model):
+    nombre = models.CharField(max_length=50)
+    apellidos = models.CharField(max_length=50)
+    edad = models.IntegerField()
+    telefono = models.CharField(max_length=13)
+    email = models.EmailField()
+    domicilio = models.TextField()
+    	
+    def __str__(self):
+        nombrecompleto = self.nombre + ' ' +self.apellidos
+        return nombrecompleto
+
+class Solicitud(models.Model):
+    persona = models.ForeignKey(Persona, null = True, blank = True)
+    numero_mascota = models.IntegerField()
+    razones = models.TextField()

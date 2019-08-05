@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'refugio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'refugio',
+        'NAME': 'refugio_db',
         'USER': 'postgres',
         'PASSWORD': 'Canape101',
         'HOST': 'localhost',
