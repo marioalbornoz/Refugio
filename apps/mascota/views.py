@@ -1,16 +1,16 @@
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
-from django.core.urlresolvers import reverse_lazy
+#from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+#from django.core.urlresolvers import reverse_lazy
 
-from apps.mascota.forms import MascotaForm
-from apps.mascota.models import Mascota
+#from apps.mascota.forms import MascotaForm
+#from apps.mascota.models import Mascota
 
 
 # Create your views here.
 
 def index(request):
 	return render(request, 'mascota/index.html')
-
+'''
 def mascota_view(request):
 	if request.method == 'POST':
 		form = MascotaForm(request.POST)
@@ -69,3 +69,4 @@ class MascotaDelete(DeleteView):
 	model = Mascota
 	template_name = 'mascota/mascota_delete.html'
 	success_url = reverse_lazy('mascota:mascota_listar')
+	'''
