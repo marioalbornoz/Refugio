@@ -10,7 +10,7 @@ class Vacuna(models.Model):
 class Mascota(models.Model):
 		nombre = models.CharField(max_length=50)
 		sexo = models.CharField(max_length=10)
-		fecha = models.DateField()
+		fecha_rescate = models.DateField()
 		edad = models.IntegerField()
 		persona = models.ForeignKey(Persona, null = True, blank = True, on_delete=models.CASCADE)
 		vacuna = models.ManyToManyField(Vacuna, blank = True)
