@@ -13,5 +13,4 @@ class Persona(models.Model):
 
 class Solicitud(models.Model):
     persona = models.ForeignKey(Persona, null = True, blank = True)
-    numero_mascota = models.IntegerField()
     razones = models.TextField()
