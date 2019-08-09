@@ -8,10 +8,8 @@ class Persona(models.Model):
     telefono = models.CharField(max_length=13)
     email = models.EmailField()
     domicilio = models.TextField()
-    	
     def __str__(self):
-        nombrecompleto = self.nombre + ' ' +self.apellidos
-        return nombrecompleto
+        return '{} {}'.format(self.nombre, self.apellidos)
 
 class Solicitud(models.Model):
     persona = models.ForeignKey(Persona, null = True, blank = True)

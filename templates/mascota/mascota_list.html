@@ -17,8 +17,8 @@
 		
 	</thead>
 	<tbody>
-		{% if mascotas %}
-		{% for mascota in mascotas %}
+		{% if object_list %}  <!-- SE USA OBJECT_LIST SOLO PARA VISTAS BASADAS EN CLASES, PARA FUNCIONES USAR DICCIONARIO-->
+		{% for mascota in object_list %}
 		<tr>
 			<td>{{ mascota.id }}</td>
 			<td>{{ mascota.nombre }}</td>

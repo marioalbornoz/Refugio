@@ -1,7 +1,15 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.views.generic import ListView
 
-# Create your views here.
+from apps.adopciones.models import Persona, Solicitud
+
+
 
 def index_adopcion(request):
-	return HttpResponse("Adopcion")
+	return HttpResponse("soy la pagina principal de la app adopcion")
+
+
+class SolicitudList(ListView):
+	model = Solicitud
+	template_name = 'adopciones/solicitud_list.html'
