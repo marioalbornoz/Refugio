@@ -130,3 +130,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 LOGIN_REDIRECT_URL = reverse_lazy('adopcion:solicitud_listar') #pagina a la cual nos redirijira una vez logueado
+LOGOUT_REDIRECT_URL = reverse_lazy('login') #pagina a la cual nos redirijira una vez logueado

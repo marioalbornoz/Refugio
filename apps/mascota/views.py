@@ -1,8 +1,12 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.models import User #importando elcmodelo donde se encuentran los usuarios activos, staff y supperusuario 
+from django.http import HttpResponse
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.core import serializers
 from django.core.urlresolvers import reverse_lazy #en django 2.0 en adelante reverse_lazy esta en django.url
 from apps.mascota.models import Mascota
 from apps.mascota.forms import MascotaForm
+
 
 
 
@@ -10,6 +14,11 @@ from apps.mascota.forms import MascotaForm
 
 def index(request):
 	return render(request, 'mascota/index.html')
+
+def listadousuarios(request):
+	lista = serializers.serialize('json', User.objects.all(), fields=['username', 'first_name'])
+	return HttpResponse(lista, content_type='application/json')
+
 
 def mascota_view(request):
 	if request.method == 'POST':
@@ -70,3 +79,4 @@ class MascotaDelete(DeleteView):
 	model = Mascota
 	template_name = 'mascota/mascota_delete.html'
 	success_url = reverse_lazy('mascota:mascota_listar')
+
