@@ -25,3 +25,5 @@ urlpatterns = [
     url(r'^accounts/login/', login, { 'template_name' : 'index.html'}, name='login'),
     url(r'^logout/', logout_then_login, name = 'logout'),
 ]
+
+admin.site.site_header = 'Refugio de Mascotas by Danners'
